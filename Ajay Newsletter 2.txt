@@ -1,0 +1,61 @@
+How We Turned NDA Review into a Traffic Light System (Without Losing Control)
+Part 2 of 3. In Part 1, I talked about the week our two-person legal team broke and why AI should shorten the path to judgment. This part is about what we actually built for NDAs.
+The Sunday after “the week it broke,” I opened my laptop to catch up. I wasn’t looking at bet-the-company litigation. I was staring at a pile of NDAs: some ours, some theirs, all buried in email chains with the subject line “Need this by tomorrow?”
+It reminded me of the early days learning tennis: standing on the baseline, flat-footed, watching balls whiz by. I wasn't missing because the shots were impossible; I was missing because I was late on the simple moves.
+On a tennis court, the simple moves—the split step, the early prep—are what let your forehand matter.
+Nadal and Djokovic are extreme versions of this. Nadal’s choreography (socks, hair, bottles) and Djokovic’s data obsession aren't magic. They just remove noise so their judgment works when the pressure is highest.
+In legal, NDAs are those simple moves. When you’re late on them, Sales thinks Legal is slow, counterparties think you’re disorganized, and real judgment work gets squeezed into nights and weekends.
+I realized that if we couldn’t make NDAs feel like a clean split step, none of the loftier AI talk would matter.
+So we built a Traffic Light System (Red/Yellow/Green) with estimated attorney turnaround baked in. Not magic drafting. Just structured triage.
+The NDA problem in practice
+Before we changed anything, NDA review was chaos:
+Requests arrived through five different channels (Email, Slack, CLM, meetings).
+Every NDA felt slightly different, even when it wasn’t.
+We answered the same questions on loop: “Is this mutual? “Can we live with New York law here?”
+If I was in a deal sprint, NDAs got stuck in my inbox.
+If we used outside counsel, we paid them to relearn preferences that lived only  in our heads.
+Nothing about that is value-add. It’s friction.
+Principles before plumbing
+We didn’t start with tools; we started with guardrails.
+Attorney-led: Automation proposes; attorneys decide.
+One problem at a time: NDAs only. No DPAs or MSAs yet.
+Small surface area: One intake path, one playbook, Red/Yellow/Green rubric.
+Reversible: Automated decisions must be easy to override or roll back.
+Auditable: We need to know who approved what, always.
+The Workflow: From Intake to "Green Light"
+We ran this inside the legal sandbox from Part 1. On top of that, we layered a multi-step workflow.
+1. Communications Intake Monitor The goal: Meet people where they are. The monitor watches approved email aliases and Slack channels. When it sees “NDA for Acme — need by Friday,” it extracts the info, normalizes it into a ticket, duplicates threads, and assigns an ID. No one has to learn a new portal.
+2. Intake Normalization The goal: Fill in the basics. It identifies mutual vs. unilateral, governing law, term, and venue. No more three-email chases just to find out which state law applies.
+3. Playbook Reference The goal: Bring standards to the document. The system pulls our current NDA playbook and the preferred template for that specific context (e.g., outbound sales vs. partnership).
+4. Form Agreement Comparator The goal: See the deviation, not just the diff. It runs a clause-by-clause check against our standard form. It tags deviations as:
+Minor: Wording differences, same meaning.
+Major: Different meaning, but acceptable bounds.
+Critical: Outside playbook or high risk.
+5. Traffic Light Assessment The goal: Simple colors, clear rules.
+Green: 0–2 minor deviations. (Target: ≤ 2 hours).
+Yellow: Up to 2 major deviations where fallbacks exist. (Target: Same day).
+Red: Critical deviations like perpetual confidentiality or unilateral IP grabs. (Target: 1–2 days).
+The goal isn’t false precision; it’s honest bands business teams can plan around.
+Set expectations upfront; everyone breathes.
+76. Attorney Review & Client Update The goal: Humans close the loop. Greens route to one-click sign (if criteria are met). Yellows and Reds open in the CLM with marked deviations and suggested language. The requester gets a clear update: “NDA with Acme is YELLOW. Estimated turnaround: 4–6 hours.”
+Human oversight is the safety valve
+We were explicit about the line:
+Yellow/Red: Always go to an attorney.
+Green: Only proceeds automatically if it matches the form on critical points AND a designated attorney enabled auto-approval for that counterparty class.
+Exception Quality Metric: We track how often counsel reverses a color (e.g., Green to Yellow). If that number rises, we retune the model.
+A concrete scenario
+One of our portfolio companies needed seven NDAs cleared before a Friday partner summit.
+On Tuesday morning:
+Five NDAs came in Green and were executed by lunch.
+Two were Yellow (IP ownership and injunctive relief tweaks).
+Sales got honest ETAs for the Yellows and didn’t hover. Behind the scenes, Legal spent time on the two that needed judgment, not on reformatting the five that didn't require it.
+Pitfalls and adjustments
+This wasn’t perfect on day one.
+Thresholds were too strict. Initially, 58% of NDAs were Yellow. Sales rightly pointed out this didn't feel faster. We clarified our governing law fallback, and Yellows dropped to 28%. Sales started DM’ing me 🙃 emojis instead of question marks.
+Over-confidence risk. We worried Greens would be treated as “no one looked at this.” We solved that with spot checks and clear documentation.
+Change management. Some business partners assumed “robot lawyer.” We took time to explain that attorneys still approve non-standard terms and everything is logged.
+Where this leads
+This workflow proved that automation can handle routine reading and routing while keeping attorneys in charge.
+By the time this felt “normal,” I noticed something else: The way I thought about NDAs wasn’t different from how I think about tennis patterns. Nadal’s rituals and Djokovic’s diet are just ways of taking noise out of the system. This system did the same for a boring, necessary part of legal.
+In Part 3, I’ll step back and share the 180-day roadmap: how we went from “sandbox” to E-billing audits and DSAR triage, all while building governance our board could trust.
+Standard note: This is an operational playbook, not legal advice.
