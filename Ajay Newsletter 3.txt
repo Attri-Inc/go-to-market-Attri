@@ -1,0 +1,54 @@
+A 180-Day AI Legal Ops Roadmap for an AI-First Fund
+Part 3 of 3. Part 1 covered the philosophy. Part 2 covered the NDA build. This part is about the rollout.
+A few weeks after we turned on NDA traffic lights, I opened our dashboard.
+On one hand, it was great: NDA turnaround was down, self-service was up, and Sales wasn't Slacking me every hour. On the other hand, my brain immediately went to: "Okay, what about everything else?"
+NDAs were solved, but DPAs were piling up. Vendor intake required three different questionnaires. E-billing lived in a spreadsheet only two people understood. And I could hear the inevitable question from a board member: "This NDA thing is clever, but how exactly are you using AI in legal?"
+It reminded me of Djokovic. He doesn't just tweak his serve; he optimizes the entire system—match data, diet, sleep, recovery. We had fixed one stroke (NDAs), but the rest of the "training plan" needed structure.
+So we gave ourselves 180 days to answer two questions:
+Can we extd NDAs without breaking trust?
+Can we do it in a way that makes our lawyers and board comfortable?
+Here is the roadmap we followed.
+Days 0–30: The Foundation
+Focus: Sandbox + NDA Dev + Communications Monitor Feeling: Cautious optimism.
+We started with security. We provisioned the sandbox: secure workspace, document retrieval (no model training), single sign-on, role-based access, least-privilege connectors, development → staging → production, and matter-scoped indexes so information barriers held.
+Set information barriers by business unit, matter, and client.
+Turned off provider-side training.
+Connected CLM, ticketing, and storage as read-only.
+The Win: We deployed the Communications Monitor to watch a single email and Slack channel.
+The Learning: Early on, duplicate tickets caused confusion. We added de-duplication by reference ID, and "where is this?" pings dropped 36%.
+Days 31–60: Production & Risk Scoring
+Focus: NDAs to Prod, DPA Scorer, Clause Librarian Feeling: Relief. The Red/Yellow/Greenly looked like a chart, not a Christmas tree.
+With NDAs behaving, we shipped a DPA Risk Scorer. It extracts data categories and transfer mechanisms, escalating only when thresholds trip (e.g., minors' data). We also added a Clause Librarian that acts like a senior associate, retrieving standard language when a clause raises questions.
+Days 61–90: Follow the Money
+Focus: E-billing audit, Public Process Summaries Feeling: Skepticism melting into trust.
+We stood up E-billing review to parse LEDES files and PDF invoices. It flagged block billing, out-of-scope staffing, and rate caps.
+The Finding: The system flagged $17,400 of block-billed admin time across three matters. We shared this with counsel, adjusted the bills, and clarified expectations. Trust went up, not down.
+Days 91–120: The Cross-Functional Layer
+Focus: Vendor Intake Router, DSAR Triage Feeling: Momentum.
+We unified three separate questionnaires (Legal, Security, IT) into one Vendor Intake Router. We also added DSAR triage for data-heavy por companies, cutting response prep time significantly.
+The Stat: Vendor onboarding time dropped from a median of 14 days to 6.
+Days 121–150: Hardening Governance
+Focus: DPIAs, RoPA, Pen Tests, Drills Feeling: Respect for the boring things.
+The workflows worked; now we had to prove they were safe. We ran DPIAs, updated our RoPA, and conducted a friendly pen test of the sandbox. We held incident tabletops (what if a doc is misrouted?) and practiced kill-switch drills.
+Days 151–180: Scale and Prune
+Focus: Product Counsel Review, Entity Manager, Pruning Feeling: Pride—and honesty.
+We added workflows for product counsel and entity management. Crucially, we retired experiments that didn't move a metric (RIP, board-packet summarizer). We shipped an operating manual including a control matrix mapped to NIST AI RMF and ISO 42001.
+Governance that builds trust
+We anchored everything to one principle: Attorneys remain responsible for legal advice. Automated steps assist; they do not decide.
+To support that, the ent is control-first:
+Identity: Role-based access, just-in-time elevation.
+Secrets: Never hard-coded in prompts.
+Logging: Every run is tagged with a reference ID tying inputs to approvals.
+Vendor Gov: SOC 2 baseline, HIPAA where relevant, strictly documented sub-processors.
+The Scoreboard (Directional, but real)
+Within ten weeks across a software-heavy portfolio:
+NDA median time: Dropped from 2 days to 2 hours.
+Self-service: 76% of requests went Green.
+DPA backlog: Shrank 40%.
+E-billing: Variance fell 12% via pre-payment audits.
+NPS: Requester satisfaction rose +2.1 points.
+On a tennis court, most points are forgettable. Only a few decide the match.
+A few decide the match.
+When you watch Nadal or Djokovic, you see that it isn't just talent—it's the systems around their judgment that let them show up differently on the points that count.
+Legal is the same. Automated steps don't replace judgment; they buy it time. Clear the unforced errors, and you're fresh for the break points that decide your deal company's risk profile.
+Standard note: This is an operational playbook, not legal advice.
