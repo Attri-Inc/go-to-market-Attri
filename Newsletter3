@@ -1,0 +1,43 @@
+I Hired an AI Agent to Be My Senior Associate (So I Could Stop Playing "Find the Definition")
+I used to spend my Tuesday nights playing a terrible game called "Find the Definition."
+You know this game. You’re reading page 45 of a Master Services Agreement (MSA). You stumble across a capitalized term like Excluded Data. You pause. You scroll up forty pages to the Definitions section. You realize the definition references another term, Customer Materials. You scroll back down to page 12. You lose your place. You scroll back to page 45.
+By the time you return to the clause you were actually trying to analyze, you’ve burned three minutes of cognitive load just to perform a variable lookup.
+I wear three hats—Managing Partner of a firm, GC of a Fund, and Chief Trust Officer for our portfolio.
+As a Partner: I see three minutes of billable time burned on work the client hates paying for.
+As a GC: I see a deal bottleneck that slows down investment velocity.
+As a Trust Officer: I see a tired human making a mistake because they’re acting like a text processor instead of a lawyer.
+For the last decade, I accepted this "JD Tax" as the cost of doing business. But looking at the advancements in 2026, I realized that the future of legal ops isn't about hiring cheaper humans to scroll for you. It’s about building a Legal Exocortex—an "extended mind" that doesn't scroll, doesn't sleep, and doesn't miss defined terms.
+But when I tried to build one, I hit a wall. To make AI work for legal, I had to unlearn everything I knew about "The Playbook."
+The Playbook Fallacy
+For years, the gold standard of Legal Ops was "The Playbook." Usually, this is a 40-page PDF buried in a SharePoint drive containing rigid If/Then rules:
+If the vendor asks for a liability cap, set it to 12 months.
+If the governing law is New York, accept. If Texas, reject.
+I assumed that because LLMs are computers, they would love these rigid rules. I was wrong.
+When we first tried to automate legal review at Twelvefold, we fed a rigid Playbook to an AI. The result was a bot that was pedantic and annoying. It would flag perfectly safe clauses just because the wording didn't match our template exactly. It was missing the forest for the trees.
+A Playbook is a map of the territory that stops working the moment the terrain shifts. And in complex deals, the terrain always shifts.
+To fix this, we had to shift our infrastructure from Rules to Principles.
+The Shift: Giving the AI "Values" Instead of "Instructions"
+I realized that if I wanted an AI to act like a Senior Associate, I had to treat it like one. You don't give a Senior Associate a script; you give them context.
+We threw out the rigid "If/Then" instructions and replaced them with a Principle Document—a set of values that explained the "Why."
+Old Playbook Rule: "Reject any indemnity clause that does not include a carve-out for gross negligence." (Rigid).
+New Principle: "We do not take responsibility for the counterparty’s bad acts, and we prioritize predictable risk over zero risk." (Strategic).
+Why does this distinction matter? Because Large Language Models (LLMs) are reasoning engines, not keyword searchers. When we fed these Principles into our system, the behavior changed. The Agent started acting less like a spellchecker and more like a colleague.
+It could look at a non-standard clause and effectively say: "This phrasing is weird, but it doesn't violate our Principle of predictable risk, so I’ll let it pass."
+The Experiment: The "Red-Eye" Deal
+To test this, I integrated these Principles into the Attri Legal Sandbox, a tool we use to create a secure "extended mind" for our legal workflows. The goal was simple: Could it handle a "Red-Eye" deal better than I could?
+I was closing a round where the counterparty sent back a "clean" PDF at 11:00 PM, claiming they only changed one date. My "Fund GC" instinct kicked in: Trust, but verify.
+In the old world, I would have spent an hour reading side-by-side, fighting fatigue. Instead, I loaded both versions into the Sandbox.
+The system didn't just check the text; it checked our Counsel Graph—the history of every contract and fallback position we’ve ever taken.
+In forty-five seconds, it flagged the date change. But then it caught something I might have missed at midnight. It flagged that they had subtly deleted the "cure period" in the termination clause.
+The Agent didn't just highlight it; it attached a note:
+"Flag: Cure period deleted. This violates Principle #4: No immediate termination without cause."
+The Agent not only flagged the issue, but also provided the principle, the rationale, and the exact locations of the changed language in both versions. I didn't have to scroll. I didn't have to play "Find the Definition." I verified the work, accepted the Agent's redline and sent it back. We didn't hype the tech to the counterparty; we simply demonstrated superior diligence.
+The Takeaway: Context is the New Code
+The most common objection I hear from other GCs is, "But the AI doesn't know the context of the deal."
+That is true. The Agent knows the text, but it doesn't know that this specific vendor is the CEO's brother-in-law. That is why in our Extended Mind model, the human always stays in the loop.
+We don't let Agents negotiate. Agents prepare the board; humans make the move.
+The transition to AI in legal isn't just about faster typing. It's about moving up the stack of abstraction.
+Level 1 (Manual): You read every word and rely on muscle memory.
+Level 2 (Playbooks): You rely on a static PDF of rules that break when reality hits.
+Level 3 (Principles + Agents): You codify your strategy into Principles. You let the Sandbox apply them. You spend your energy deciding if the exceptions are worth the risk.
+Stop reading standard clauses. Build a system that reads them for you, so you can stop playing "Find the Definition" and start playing "Close the Deal."
